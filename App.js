@@ -2,39 +2,19 @@ import React from "react";
 import { View, Text, Button } from "react-native";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Seonoh Home Screen</Text>
-        <Button
-          title="Go detail screen"
-          onPress={() => this.props.navigation.navigate("Details")}
-        />
-      </View>
-    );
-  }
-}
-class DetailsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Seonoh Detail Screen</Text>
-        <Button
-          title="Go Home screen"
-          onPress={() => this.props.navigation.navigate("Home")}
-        />
-      </View>
-    );
-  }
-}
+import LoginScreen from "./Login"
+import WeatherHomeScreen from "./WeatherHome"
+import TodoListScreen from "./TodoListHome"
+
 const AppNavigator = createStackNavigator(
   {
-    Home: HomeScreen,
-    Details: DetailsScreen
+    Home: LoginScreen,
+    Weather: WeatherHomeScreen,
+    TodoList : TodoListScreen
   },
   {
-    initialRouteName: "Home"
+    initialRouteName: "Home",
+    headerMode:"none"
   }
 );
 export default createAppContainer(AppNavigator);
