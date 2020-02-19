@@ -147,12 +147,12 @@ _saveToDos = newToDos => {
         <TouchableOpacity style={styles.backBtn} >
             <Text style={styles.backBtnTxt} onPress={() => this.props.navigation.navigate("Home")}>⬅</Text>
         </TouchableOpacity>
-        <Text style={styles.title}>this TodoList</Text>
+        <Text style={styles.title}>오늘 할일을 알려죠!</Text>
         
         <View style={styles.card}>
         <TextInput 
             style={styles.newinputTxt} 
-            placeholder={"New To do"} 
+            placeholder={"할일을 입력해죠!"} 
             value = {newtodo}
             onChangeText ={this._controlNewTodo}
             placeholderTextColor = {"#999"}
@@ -179,7 +179,7 @@ _saveToDos = newToDos => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F23657',
+    backgroundColor: '#ff9a9e',
     alignItems: 'center',
   },
   backBtn:{

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
+import { LinearGradient } from 'expo-linear-gradient';//배경이 그라디언트
 import CustomButton from "./CustomButton";
 
 export default class StartScreen extends Component {
@@ -13,12 +14,12 @@ export default class StartScreen extends Component {
       
         <View style={styles.footer}>
           <CustomButton
-            buttonColor={"#444"}
+            buttonColor={"#fad0c4"}
             title={"날씨정보"}
             onPress={() => this.props.navigation.navigate("Weather")}
           />
           <CustomButton
-            buttonColor={"#023e73"}
+            buttonColor={"#fad0c4"}
             title={"투두리스트"}
             onPress={() => this.props.navigation.navigate("TodoList")}
           />
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: "black"
+    backgroundColor:"#ff9a9e" 
   },
 
   header: {

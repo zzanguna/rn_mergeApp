@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import { LinearGradient } from 'expo-linear-gradient';//배경이 그라디언트
 import {
+  ActivityIndicator,
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
-  ActivityIndicator,
   StatusBar
 } from "react-native";
 import Weather from "./Weather";
@@ -58,16 +58,17 @@ export default class WeatherHome extends Component {
       <View style={styles.container}>
 
         <StatusBar hidden={true} />
-
-        {isLoaded ? (
+        
+         {isLoaded ? (
           <Weather temp={Math.floor(temperature - 273.15)} weatherName={name} propsNavigation={this.props.navigation}/>
         ) : (
-          <View style={styles.loading}>
+          <LinearGradient colors={["#00C6FB" ,"#005BEA"]} style={styles.loading}>
+            <ActivityIndicator size="large" color="#0000ff" />
             <Text style={styles.loadingText}>날씨 정보를 불러옵니다.</Text>
             {errortxt ? <Text style={styles.errorText}>{errortxt}</Text> : null}
-          </View>
+        </LinearGradient>
         ) //null이 아니라면 로딩 중
-        }
+        } 
       </View>
     );
   }
@@ -92,15 +93,18 @@ const styles = StyleSheet.create({
   loading: {
     flex: 1,
     backgroundColor: "#fdf6aa",
-    justifyContent: "flex-end",
-    paddingLeft: 25
+    paddingLeft: 25,
+    justifyContent:"center"
   },
   errorText: {
     color: "red",
     marginBottom: 40
   },
   loadingText: {
-    fontSize: 38,
-    marginBottom: 35
+    marginTop:20,
+    fontSize: 20,
+    marginBottom: 35,
+    alignSelf:"center",
+    color:"white"
   }
 });

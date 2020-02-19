@@ -10,7 +10,7 @@ export default class CustomButton extends Component{
   static defaultProps = {
     title: 'untitled',
     buttonColor: '#000',
-    titleColor: '#fff',
+    titleColor: '#f99185',
     onPress: () => null,
   }
 
@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     margin:10,
   },
   title: {
-    fontSize: 15,
+    fontSize: 20,
+    fontWeight:"200"
   },
 });
