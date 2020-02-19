@@ -62,7 +62,7 @@ export default class WeatherHome extends Component {
          {isLoaded ? (
           <Weather temp={Math.floor(temperature - 273.15)} weatherName={name} propsNavigation={this.props.navigation}/>
         ) : (
-          <LinearGradient colors={["#00C6FB" ,"#005BEA"]} style={styles.loading}>
+          <LinearGradient colors={["#a1c4fd" ,"#c2e9fb"]} style={styles.loading}>
             <ActivityIndicator size="large" color="#0000ff" />
             <Text style={styles.loadingText}>날씨 정보를 불러옵니다.</Text>
             {errortxt ? <Text style={styles.errorText}>{errortxt}</Text> : null}
